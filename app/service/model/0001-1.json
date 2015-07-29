@@ -1,0 +1,213 @@
+{
+	"user": {
+		"email" : "mike@claiborne.net",
+		"marginal_tax" : "30%",
+		"marginal_tax_n" : null
+
+	},
+	
+	"plans": [
+		{
+			"name": "United 123",
+			"active": true,
+			"premium": "$1250",
+			"premium_n": null,
+			"has_hsa": false,	
+			"hsa_payment": "$0",
+			"hsa_payment_n": null,
+			"periods": "12",
+			"periods_n": null,
+			"dr_visit": {
+				"coins": null,
+				"coins_n": null,
+				"copay": "$25",
+				"copay_n": null
+			},
+			"spec_visit": {
+				"coins": null,
+				"coins_n": null,
+				"copay": "$55",
+				"copay_n": null
+			},
+			"er_visit": {
+				"coins": null,
+				"coins_n": null,
+				"copay": "200",
+				"copay_n": null
+			},
+			"hosp_visit": "50%",
+			"hosp_visit_n": null,
+			"out_surgery": "50%",
+			"out_surgery_n": null,
+			"deductable": "$3000",
+			"deductable_n": null,
+			"out_max_annual": "$10000", 
+			"out_max_annual_n": null 
+			},
+
+		{
+			"name": "Aetna HSPA 91",
+			"active": true,
+			"premium": "$850",
+			"premium_n": null,
+			"has_hsa": true,
+			"hsa_payment": "$400",
+			"hsa_payment_n": null,
+			"periods": "12",
+			"periods_n": null,
+			"dr_visit": {
+				"coins": "80%",
+				"coins_n": null,
+				"copay": null,
+				"copay_n": null
+			},
+			"spec_visit": {
+				"coins": "80%",
+				"copay": null,
+				"coins_n": null,
+				"copay_n": null
+			},
+			"er_visit": {
+				"coins": "80%",
+				"copay": null,
+				"coins_n": null,
+				"copay_n": null
+			},
+			"hosp_visit": "80%",
+			"out_surgery": "80%",
+			"deductable": "$6000",
+			"out_max_annual": "$18500",
+			"hosp_visit_n": null,
+			"out_surgery_n": null,
+			"deductable_n": null,
+			"out_max_annual_n": null 			
+		}
+	],
+	
+	"scenarios": [
+		{
+			"name": "Normal",
+			"active": true,
+			"dr_visits": {
+				"number": "15",
+				"price": "150",
+				"number_n": null,
+				"price_n": null
+			},
+			"spec_visits": {
+				"number": "1",
+				"price": "250",
+				"number_n": null,
+				"price_n": null
+			},
+			"er_visits": {
+				"number": "0",
+				"price": "500",
+				"number_n": null,
+				"price_n": null
+			},
+			"hosp_visits": "0",
+			"out_surgeries": "0",
+			"hosp_visits": null,
+			"out_surgeries": null,
+			"calcs": {
+				"prem_paid": 15000,
+				"dr_svcs_incur": 375,
+				"spec_svcs_incur": 55,
+				"er_svcs_incur": 0,
+				"hosp_svcs_incur": 0,
+				"out_svcs_incur": 0,
+				"tot_svcs_incur": 2450,
+				"incur_paid": 430,
+				"hsa_tax_ben": 0,
+				"hsa_exp": 0,
+				"hsa_paid": null
+				}
+			},
+
+		{
+			"name": "Emergency surgery",
+			"active": true,
+			"dr_visits": {
+				"number": "30",
+				"price": "150",
+				"number_n": null,
+				"price_n": null
+			},
+			"spec_visits": {
+				"number": "5",
+				"price": "250",
+				"number_n": null,
+				"price_n": null
+			},
+			"er_visits": {
+				"number": "1",
+				"price": "1150",
+				"number_n": null,
+				"price_n": null
+			},
+			"hosp_visits": "30000",
+			"out_surgeries": "0",
+			"hosp_visits_n": null,
+			"out_surgeries_n": null
+		}
+
+	],
+	"calcs": {
+		"plan_0_scen_0": {
+			"prem_paid": 15000,
+			"dr_svcs_incur": 375,
+			"spec_svcs_incur": 55,
+			"er_svcs_incur": 0,
+			"hosp_svcs_incur": 0,
+			"out_svcs_incur": 0,
+			"tot_svcs_incur": 2450,
+			"incur_paid": 430,
+			"hsa_tax_ben": 0,
+			"hsa_exp": 0,
+			"hsa_paid": null
+		},
+		"plan_0_scen_1": {
+			"prem_paid": 15000,
+			"dr_svcs_incur": 375,
+			"spec_svcs_incur": 55,
+			"er_svcs_incur": 0,
+			"hosp_svcs_incur": 0,
+			"out_svcs_incur": 0,
+			"tot_svcs_incur": 2450,
+			"incur_paid": 10000,
+			"hsa_tax_ben": 0,
+			"hsa_exp": 0,
+			"hsa_paid": null
+		},
+		"plan_1_scen_0": {
+			"prem_paid": 10200,
+			"dr_svcs_incur": 2250,
+			"spec_svcs_incur": 200,
+			"er_svcs_incur": 0,
+			"hosp_svcs_incur": 0,
+			"out_svcs_incur": 0,
+			"tot_svcs_incur": 2450,
+			"incur_paid": 2450,
+			"hsa_tax_ben": -1,
+			"hsa_exp": 2450,
+			"hsa_paid": 4800
+		},
+		"plan_1_scen_1": {
+			"prem_paid": 10200,
+			"dr_svcs_incur": -1,
+			"spec_svcs_incur": -1,
+			"er_svcs_incur": -1,
+			"hosp_svcs_incur": -1,
+			"out_svcs_incur": -1,
+			"tot_svcs_incur": -1,
+			"incur_paid": 18500,
+			"hsa_tax_ben": -1,
+			"hsa_exp": -1,
+			"hsa_paid": 4800
+		}
+	}
+		
+
+}
+

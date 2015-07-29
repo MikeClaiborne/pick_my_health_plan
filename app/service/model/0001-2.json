@@ -1,0 +1,164 @@
+{
+	"user": {
+		"email" : "",
+		"marginal_tax" : "",
+		"marginal_tax_n" : null
+	},
+	
+	"plans": [
+		{
+			"name": null,
+			"active": true,
+			"premium": null,
+			"premium_n": null,
+			"has_hsa": false,	
+			"hsa_payment": null,
+			"hsa_payment_n": null,
+			"periods": null,
+			"periods_n": null,
+			"dr_visit": {
+				"copay": null,
+				"coins": null, 
+				"copay_n": null,
+				"coins_n": null 
+			},
+			"spec_visit": {
+				"copay": null,
+				"coins": null, 
+				"copay_n": null,
+				"coins_n": null 
+			},
+			"er_visit": {
+				"copay": null,
+				"coins": null, 
+				"copay_n": null,
+				"coins_n": null 
+			},
+			"hosp_visit": null,
+			"out_surgery": null,
+			"deductable": null,
+			"out_max_annual": null, 
+			"hosp_visit_n": null,
+			"out_surgery_n": null,
+			"deductable_n": null,
+			"out_max_annual_n": null 
+			},
+
+		{
+			"name": null,
+			"active": true,
+			"premium": null,
+			"premium_n": null,
+			"has_hsa": false,	
+			"hsa_payment": null,
+			"hsa_payment_n": null,
+			"periods": null,
+			"periods_n": null,
+			"dr_visit": {
+				"copay": null,
+				"coins": null, 
+				"copay_n": null,
+				"coins_n": null 
+			},
+			"spec_visit": {
+				"copay": null,
+				"coins": null, 
+				"copay_n": null,
+				"coins_n": null 
+			},
+			"er_visit": {
+				"copay": null,
+				"coins": null, 
+				"copay_n": null,
+				"coins_n": null 
+			},
+			"hosp_visit": null,
+			"out_surgery": null,
+			"deductable": null,
+			"out_max_annual": null, 
+			"hosp_visit_n": null,
+			"out_surgery_n": null,
+			"deductable_n": null,
+			"out_max_annual_n": null 
+			}
+	],
+	
+	"scenarios": [
+		{
+			"name": "Normal",
+			"active": true,
+			"dr_visits": {
+				"number": null,
+				"price": null,
+				"number_n": null,
+				"price_n": null
+			},
+			"spec_visits": {
+				"number": null,
+				"price": null,
+				"number_n": null,
+				"price_n": null
+			},
+			"er_visits": {
+				"number": null,
+				"price": null,
+				"number_n": null,
+				"price_n": null
+			},
+			"hosp_visits": null,
+			"out_surgeries": null,
+			"hosp_visits_n": null,
+			"out_surgeries_n": null,
+			"calcs": {
+				"prem_paid": null,
+				"dr_svcs_incur": null,
+				"spec_svcs_incur": null,
+				"er_svcs_incur": null,
+				"tot_svcs_incur": null,
+				"incur_paid": null,
+				"hsa_tax_ben": null,
+				"hsa_exp": null,
+				"hsa_paid": null
+				}
+			},
+
+		{
+			"name": null,
+			"active": true,
+			"dr_visits": {
+				"number": null,
+				"price": null,
+				"number_n": null,
+				"price_n": null
+			},
+			"spec_visits": {
+				"number": null,
+				"price": null,
+				"number_n": null,
+				"price_n": null
+			},
+			"er_visits": {
+				"number": null,
+				"price": null,
+				"number_n": null,
+				"price_n": null
+			},
+			"hosp_visits": null,
+			"out_surgeries": null,
+			"hosp_visits_n": null,
+			"out_surgeries_n": null,
+			"calcs": {
+				"prem_paid": null,
+				"dr_svcs_incur": null,
+				"spec_svcs_incur": null,
+				"er_svcs_incur": null,
+				"tot_svcs_incur": null,
+				"incur_paid": null,
+				"hsa_tax_ben": null,
+				"hsa_exp": null,
+				"hsa_paid": null
+				}
+			}
+	]
+}
+

@@ -1,0 +1,600 @@
+<!--- MAIN BODY -->
+
+<div>
+  <md-content class="md-padding">
+   
+    <md-tabs md-border-bottom md-dynamic-height>
+
+      <!-- TAB 0.5 ############################ -->
+      <md-tab label="Begin" md-on-select="beginOnSelect()" md-on-deselect="beginOnDeselect()">
+        <md-content class="md-padding">
+        
+        <div layout="row">
+          <div flex="66">
+          <h1 class="md-display-1">Before we start....</h1>
+          <br/>
+          <p class="md-subhead">You need the details for each plan to consider (premium, deductable, etc.)</p>
+          <br/>
+          <p class="md-subhead">
+          Please note that:
+          <ul> 
+              <li><p class="md-subhead">This tool will help you make rough estimates for total out-of-pocket costs for most situations<br/></p></li>
+              <li><p class="md-subhead">You probably won't have estimates for some costs, like the cost of emergency-related hospital stays. Don't worry. It's better to make some educated guesses and see how the plans cover the costs rather than to have a very accurate estimates<br/></p></li>
+              <li><p class="md-subhead">You can save your work and return later<br/></p></li>
+          </ul>
+        </p>
+
+          </div>
+          <div><!-- FILLER COLUMN --></div>
+        </div>
+        </md-content>
+      </md-tab>
+
+      <!-- ################################################################################# -->
+      <!-- ################################################################################# -->
+      <!-- ################################################################################# -->
+      <!-- ################################################################################# -->
+      <!-- TAB 1 ############################ -->
+      <md-tab label="1. Plan Details">
+        <md-content class="md-padding">
+          
+          <div layout="row"> <!-- HEADER -->
+            <div flex="10"> </div>
+            <div flex="15"><h1 class="md-title" align="center">Plan #1</h1></div>
+            <div flex="15"><h1 class="md-title" align="center">Plan #2</h1></div>
+            <div flex="5"> 
+              <md-button class="md-icon-button" aria-label="Add a Plan">
+                <md-tooltip>
+                  Add a Plan
+                </md-tooltip>
+                <md-icon class="material-icons" style="vertical-align: bottom; align:center;">add_box</md-icon>
+              </md-button>
+            </div>
+            <div flex><h1 class="md-title">Description</h1></div>         
+          </div>  
+
+          <div layout="row"> <!-- ROW ############################ -->
+            <div flex="10">Name:</div>
+            <div flex="15">
+              <md-input-container md-no-float>
+                <input aria-label="aria-label" type="text" required placeholder="name" ng-model="userModel.plans[0].name">
+              </md-input-container>  
+            </div>
+            <div flex="15">
+              <md-input-container md-no-float>
+                <input aria-label="aria-label" type="text" required placeholder="name" ng-model="userModel.plans[1].name">
+              </md-input-container>  
+            </div>
+            <div flex="5"> 
+            </div>
+            <div flex>Name of plan</div>
+          </div>
+
+          <div layout="row"> <!-- ROW ############################ -->
+            <div flex="10">Premium:</div>
+            <div flex="15">
+              <md-input-container md-no-float>
+                <input aria-label="aria-label" type="text" required placeholder="amount" ng-model="userModel.plans[0].premium">
+                    <!--div ng-messages="userForm.lastName.$error" ng-show="userForm.lastName.$dirty">
+                      <div ng-message="required">This is required!</div>
+                      <div ng-message="md-maxlength">That's too long!</div>
+                    </div-->
+              </md-input-container>  
+            </div>
+            <div flex="15">
+              <md-input-container md-no-float>
+                <input aria-label="aria-label" type="text" required ng-model="userModel.plans[1].premium">
+              </md-input-container>  
+            </div>
+            <div flex="5">
+            </div>
+            <div flex>Premium Amount</div>
+          </div>
+            
+          <div layout="row"> <!-- ROW ############################ -->
+            <div flex="10">HSA Contribution:</div>
+            <div flex="15">
+              <md-input-container md-no-float>
+                <input aria-label="aria-label" type="text" required placeholder="amount" ng-model="userModel.plans[0].hsa_payment">
+                    <!--div ng-messages="userForm.lastName.$error" ng-show="userForm.lastName.$dirty">
+                      <div ng-message="required">This is required!</div>
+                      <div ng-message="md-maxlength">That's too long!</div>
+                    </div-->
+              </md-input-container>  
+            </div>
+            <div flex="15">
+              <md-input-container md-no-float>
+                <input aria-label="aria-label" type="text" required placeholder="amount" ng-model="userModel.plans[1].hsa_payment">
+              </md-input-container>  
+            </div>
+            <div flex="5">
+            </div>
+            <div flex>The amount you contribute towards your Health Savings Account (HSA) each period</div>
+          </div>
+                      
+          <div layout="row"> <!-- ROW ############################ -->
+            <div flex="10">Annual Payment Periods:</div>
+            <div flex="15">
+              <md-input-container md-no-float>
+                <input aria-label="aria-label" type="text" required placeholder="number" ng-model="userModel.plans[0].periods">
+              </md-input-container>  
+            </div>
+            <div flex="15">
+              <md-input-container md-no-float>
+                <input aria-label="aria-label" type="text" required placeholder="number" ng-model="userModel.plans[1].periods">
+              </md-input-container>  
+            </div>
+            <div flex="5">               
+            </div>
+            <div flex>Number of times per year that you pay the premium and HSA contribution. (For example, enter 12 for monthly, 26 for bi-weekly)</div>
+          </div>
+
+          <div layout="row"> <!-- ROW ############################ -->
+            <div flex="10">Dr Visits:</div>
+
+            <div flex="15">
+              <div layout="row">   
+                <div>
+                  <md-input-container md-no-float>
+                    <input aria-label="aria-label" type="text" required placeholder="coinsurance %" ng-model="userModel.plans[0].dr_visit.coins">
+                  </md-input-container>  
+                </div>
+                <div>-OR-</div>
+              </div>
+              <div>
+                <md-input-container md-no-float>
+                  <input aria-label="aria-label" type="text" required placeholder="copay $" ng-model="userModel.plans[0].dr_visit.copay">
+                </md-input-container>
+              </div>
+            </div>
+
+            <div flex="15">
+              <div layout="row">   
+                <div>
+                  <md-input-container md-no-float>
+                    <input aria-label="aria-label" type="text" required placeholder="coinsurance %" ng-model="userModel.plans[1].dr_visit.coins">
+                  </md-input-container>  
+                </div>
+                <div>-OR-</div>
+              </div>
+              <div>
+                <md-input-container md-no-float>
+                  <input aria-label="aria-label" type="text" required placeholder="copay $" ng-model="userModel.plans[1].dr_visit.copay">
+                </md-input-container>
+              </div>
+            </div>
+
+            <!--div flex="15" layout="row">     //OLD WAY - DELETE SOON 
+              <md-radio-group ng-model="userModel.plans[1].dr_visit.percent">
+                <md-radio-button ng-value="true" class="md-primary">% coinsur.</md-radio-button>
+                <md-radio-button ng-value="false" class="md-primary">$ copay</md-radio-button>
+              </md-radio-group>  
+              <md-input-container md-no-float>
+                <input aria-label="aria-label" type="text" required placeholder="amount" ng-model="userModel.plans[1].dr_visit.amount">
+              </md-input-container>  
+            </div-->
+
+            <div flex="5">
+            </div>
+            <div flex>Amount the patient pays per Dr visit</div>
+          </div>
+                      
+          <div layout="row"> <!-- ROW ############################ -->
+            <div flex="10">Specialist Visit Copay:</div>
+            <div flex="15">
+              <div layout="row">   
+                <div>
+                  <md-input-container md-no-float>
+                    <input aria-label="aria-label" type="text" required placeholder="coinsurance %" ng-model="userModel.plans[0].spec_visit.coins">
+                  </md-input-container>  
+                </div>
+                <div>-OR-</div>
+              </div>
+              <div>
+                <md-input-container md-no-float>
+                  <input aria-label="aria-label" type="text" required placeholder="copay $" ng-model="userModel.plans[0].spec_visit.copay">
+                </md-input-container>
+              </div>
+            </div>
+
+            <div flex="15">
+              <div layout="row">   
+                <div>
+                  <md-input-container md-no-float>
+                    <input aria-label="aria-label" type="text" required placeholder="coinsurance %" ng-model="userModel.plans[1].spec_visit.coins">
+                  </md-input-container>  
+                </div>
+                <div>-OR-</div>
+              </div>
+              <div>
+                <md-input-container md-no-float>
+                  <input aria-label="aria-label" type="text" required placeholder="copay $" ng-model="userModel.plans[1].spec_visit.copay">
+                </md-input-container>
+              </div>
+            </div>
+            <div flex="5">
+            </div>
+            <div flex>Amount the patient pays per specialist visit</div>
+          </div>
+                      
+                      
+          <div layout="row"> <!-- ROW ############################ -->
+            <div flex="10">Emergency Room:</div>
+            <div flex="15">
+              <div layout="row">   
+                <div>
+                  <md-input-container md-no-float>
+                    <input aria-label="aria-label" type="text" required placeholder="coinsurance %" ng-model="userModel.plans[0].er_visit.coins">
+                  </md-input-container>  
+                </div>
+                <div>-OR-</div>
+              </div>
+              <div>
+                <md-input-container md-no-float>
+                  <input aria-label="aria-label" type="text" required placeholder="copay $" ng-model="userModel.plans[0].er_visit.copay">
+                </md-input-container>
+              </div>
+            </div>
+
+            <div flex="15">
+              <div layout="row">   
+                <div>
+                  <md-input-container md-no-float>
+                    <input aria-label="aria-label" type="text" required placeholder="coinsurance %" ng-model="userModel.plans[1].er_visit.coins">
+                  </md-input-container>  
+                </div>
+                <div>-OR-</div>
+              </div>
+              <div>
+                <md-input-container md-no-float>
+                  <input aria-label="aria-label" type="text" required placeholder="copay $" ng-model="userModel.plans[1].er_visit.copay">
+                </md-input-container>
+              </div>
+            </div>
+            <div flex="5">
+            </div>
+            <div flex>Amount the patient pays per emergency room visit</div>
+          </div>
+
+          <div layout="row"> <!-- ROW ############################ -->
+            <div flex="10">Inpatient Hospital %:</div>
+            <div flex="15">
+              <md-input-container md-no-float>
+                <input aria-label="aria-label" type="text" required placeholder="amount" ng-model="userModel.plans[0].hosp_visit">
+                    <!--div ng-messages="userForm.lastName.$error" ng-show="userForm.lastName.$dirty">
+                      <div ng-message="required">This is required!</div>
+                      <div ng-message="md-maxlength">That's too long!</div>
+                    </div-->
+              </md-input-container>  
+            </div>
+            <div flex="15">
+              <md-input-container md-no-float>
+                <input aria-label="aria-label" type="text" required placeholder="amount" ng-model="userModel.plans[1].hosp_visit">
+              </md-input-container>  
+            </div>
+            <div flex="5">
+            </div>
+            <div flex>The percentage the patient pays for a hospital stay</div>
+          </div>
+  
+          <div layout="row"> <!-- ROW ############################ -->
+            <div flex="10">Outpatient Surgery %:</div>
+            <div flex="15">
+              <md-input-container md-no-float>
+                <input aria-label="aria-label" type="text" required placeholder="amount" ng-model="userModel.plans[0].out_surgery">
+                    <!--div ng-messages="userForm.lastName.$error" ng-show="userForm.lastName.$dirty">
+                      <div ng-message="required">This is required!</div>
+                      <div ng-message="md-maxlength">That's too long!</div>
+                    </div-->
+              </md-input-container>  
+            </div>
+            <div flex="15">
+              <md-input-container md-no-float>
+                <input aria-label="aria-label" type="text" required placeholder="amount" ng-model="userModel.plans[1].out_surgery">
+              </md-input-container>  
+            </div>
+            <div flex="5">
+            </div>
+            <div flex>The percentage the patient pays for a outpatient surgery</div>
+          </div>
+  
+          <div layout="row"> <!-- ROW ############################ -->
+            <div flex="10">Deductible:</div>
+            <div flex="15">
+              <md-input-container md-no-float>
+                <input aria-label="aria-label" type="text" required placeholder="amount" ng-model="userModel.plans[0].deductable">
+                    <!--div ng-messages="userForm.lastName.$error" ng-show="userForm.lastName.$dirty">
+                      <div ng-message="required">This is required!</div>
+                      <div ng-message="md-maxlength">That's too long!</div>
+                    </div-->
+              </md-input-container>  
+            </div>
+            <div flex="15">
+              <md-input-container md-no-float>
+                <input aria-label="aria-label" type="text" required placeholder="amount" ng-model="userModel.plans[1].deductable">
+              </md-input-container>  
+            </div>
+            <div flex="5">
+            </div>
+            <div flex>(need description)</div>
+          </div>
+                      
+          <div layout="row"> <!-- ROW ############################ -->
+            <div flex="10">Max Out-of-Pocket (Annual):</div>
+            <div flex="15">
+              <md-input-container md-no-float>
+                <input aria-label="aria-label" type="text" required placeholder="amount" ng-model="userModel.plans[0].out_max_annual">
+                    <!--div ng-messages="userForm.lastName.$error" ng-show="userForm.lastName.$dirty">
+                      <div ng-message="required">This is required!</div>
+                      <div ng-message="md-maxlength">That's too long!</div>
+                    </div-->
+              </md-input-container>  
+            </div>
+            <div flex="15">
+              <md-input-container md-no-float>
+                <input aria-label="aria-label" type="text" required placeholder="amount" ng-model="userModel.plans[1].out_max_annual">
+              </md-input-container>  
+            </div>
+            <div flex="5">
+            </div>
+            <div flex>(need description)</div>
+          </div>
+                      
+        </md-content>
+      </md-tab>
+
+      <!-- ################################################################################# -->
+      <!-- ################################################################################# -->
+      <!-- ################################################################################# -->
+      <!-- ################################################################################# -->
+      <!-- TAB 2 ############################ -->
+      <md-tab label="2. Estimated Health Care Needs">
+        <md-content class="md-padding">
+          
+          <div layout="row"> <!-- HEADER -->
+            <div flex="10"> </div>
+            <div flex="15"><h1 class="md-title" align="center">Scenario 1</h1></div>
+            <div flex="15"><h1 class="md-title" align="center">Scenario 2</h1></div>
+            <div flex="5">
+              <md-button class="md-icon-button" aria-label="Add a Scenario">
+                <md-tooltip>
+                  Add a Scenario
+                </md-tooltip>
+                <md-icon class="material-icons" style="vertical-align: bottom; align:center;">add_box</md-icon>
+
+              </md-button>
+
+            </div>
+            <div flex><h1 class="md-title">Description</h1></div>         
+          </div>  
+
+          <div layout="row"> <!-- ROW ############################ -->
+            <div flex="10">Name:</div>
+            <div flex="15">
+              <md-input-container>
+                <input aria-label="aria-label" type="text" required ng-model="userModel.scenarios[0].name">
+             </md-input-container>  
+            </div>
+            <div flex="15">
+              <md-input-container>
+                <input aria-label="aria-label" type="text" required ng-model="userModel.scenarios[1].name">
+              </md-input-container>  
+            </div>
+            <div flex="5"> 
+            </div>
+            <div flex>Name of this scenario (e.g. Normal with 1 ER visit)</div>
+          </div>
+
+          <div layout="row"> <!-- ROW ############################ -->
+            <div flex="10">Marginal tax rate %:</div>
+            <div flex="15">
+              <md-input-container>
+                <input aria-label="aria-label" type="text" required ng-model="userModel.user.marginal_tax">
+                    <!--div ng-messages="userForm.lastName.$error" ng-show="userForm.lastName.$dirty">
+                      <div ng-message="required">This is required!</div>
+                      <div ng-message="md-maxlength">That's too long!</div>
+                    </div-->
+              </md-input-container>  
+            </div>
+            <div flex="15">
+              <md-input-container>
+                <input aria-label="aria-label" type="text" required ng-model="userModel.user.marginal_tax">
+              </md-input-container>  
+            </div>
+            <div flex="5">
+            </div>
+            <div flex>The percentage that Uncle Sam takes of each additional $ that you earn</div>
+          </div>
+            
+          <div layout="row"> <!-- ROW ############################ -->
+            <div flex="10">Dr Visits:</div>
+            <div flex="15">
+              <md-input-container>
+                <input aria-label="aria-label" type="text" placeholder="number" ng-model="userModel.scenarios[0].dr_visits.number">
+              </md-input-container>  
+              <md-input-container>
+                <input aria-label="aria-label" type="text" placeholder="$ per visit" ng-model="userModel.scenarios[0].dr_visits.price">
+              </md-input-container>  
+            </div>
+            <div flex="15">
+              <md-input-container>
+                <input aria-label="aria-label" type="text" placeholder="number" ng-model="userModel.scenarios[1].dr_visits.number">
+              </md-input-container>  
+              <md-input-container>
+                <input aria-label="aria-label" type="text" placeholder="$ per visit"ng-model="userModel.scenarios[1].dr_visits.price">
+              </md-input-container>  
+            </div>
+            <div flex="5">
+            </div>
+            <div flex>The estimated number of visits and the negotiated price for the visit</div>
+          </div>
+                      
+          <div layout="row"> <!-- ROW ############################ -->
+            <div flex="10">Specialist Visits:</div>
+            <div flex="15">
+              <md-input-container>
+                <input aria-label="aria-label" type="text" placeholder="number" ng-model="userModel.scenarios[0].spec_visits.number">
+              </md-input-container>  
+              <md-input-container >
+                <input aria-label="aria-label" type="text" placeholder="$ per visit" ng-model="userModel.scenarios[0].spec_visits.price">
+              </md-input-container>  
+            </div>
+            <div flex="15">
+              <md-input-container>
+                <input aria-label="aria-label" type="text" placeholder="number" ng-model="userModel.scenarios[1].spec_visits.number">
+              </md-input-container>  
+              <md-input-container>
+                <input aria-label="aria-label" type="text" placeholder="$ per visit" ng-model="userModel.scenarios[1].spec_visits.price">
+              </md-input-container>  
+            </div>
+            <div flex="5">
+            </div>
+            <div flex>The estimated number of visits and the negotiated price for the visit</div>
+          </div>
+                      
+          <div layout="row"> <!-- ROW ############################ -->
+            <div flex="10">ER Visits:</div>
+            <div flex="15">
+              <md-input-container>
+                <input aria-label="aria-label" type="text" placeholder="number" ng-model="userModel.scenarios[0].er_visits.number">
+              </md-input-container>  
+              <md-input-container>
+                <input aria-label="aria-label" type="text" placeholder="$ per visit" ng-model="userModel.scenarios[0].er_visits.price">
+              </md-input-container>  
+            </div>
+            <div flex="15">
+              <md-input-container>
+                <input aria-label="aria-label" type="text" placeholder="number" ng-model="userModel.scenarios[1].er_visits.number">
+              </md-input-container>  
+              <md-input-container>
+                <input aria-label="aria-label" type="text" placeholder="$ per visit" ng-model="userModel.scenarios[1].er_visits.price">
+              </md-input-container>  
+            </div>
+            <div flex="5">
+            </div>
+            <div flex>The estimated number of visits to the Emergency Room and the price for each visit</div>
+          </div>
+                      
+          <div layout="row"> <!-- ROW ############################ -->
+            <div flex="10">Hospital Visit Costs:</div>
+            <div flex="15">
+              <md-input-container>
+                <input aria-label="aria-label" type="text" ng-model="userModel.scenarios[0].hosp_visits">
+              </md-input-container>  
+            </div>
+            <div flex="15">
+              <md-input-container>
+                <input aria-label="aria-label" type="text" ng-model="userModel.scenarios[1].hosp_visits">
+              </md-input-container>  
+            </div>
+            <div flex="5">               
+            </div>
+            <div flex>A rough estimate of total costs for hospital stays</div>
+          </div>
+
+          <div layout="row"> <!-- ROW ############################ -->
+            <div flex="10">Outpatient Surgery Costs:</div>
+            <div flex="15">
+              <md-input-container>
+                <input aria-label="aria-label" type="text" ng-model="userModel.scenarios[0].out_surgeries">
+              </md-input-container>  
+            </div>
+            <div flex="15">
+              <md-input-container>
+                <input aria-label="aria-label" type="text" ng-model="userModel.scenarios[1].out_surgeries">
+              </md-input-container>  
+            </div>
+            <div flex="5">               
+            </div>
+            <div flex>A rough estimate of total costs for outpatient surgery</div>
+          </div>
+
+                      
+        </md-content>
+      </md-tab>
+
+      <!-- ################################################################################# -->
+      <!-- ################################################################################# -->
+      <!-- ################################################################################# -->
+      <!-- ################################################################################# -->
+      <!-- TAB 3 ############################ -->
+      <md-tab label="3. Analysis" md-on-select="analyzeOnSelect()" md-on-deselect="analyzeOnDeselect()">
+        <md-content class="md-padding">
+          
+
+          <div layout="row">
+            <div align="center" flex="80"><h1 class="md-display-1">Summary - Total Out-of-Pocket $s</h1></div>
+            <div flex><!-- FILLER --> </div>
+          </div>
+
+          <!--br/>Test<br/>
+          userModel.calcs[0][0].incur_paid = {{userModel.calcs[0][0].incur_paid}}
+          userModel.calcs[0][1].incur_paid = {{userModel.calcs[0][1].incur_paid}}
+          <br/-->
+          <div layout="row">
+            <div flex="40">
+            
+            <highchart id="chart1" config="chartConfig1"></highchart>
+            </div>
+
+            <div flex="40">
+            
+            <highchart id="chart1" config="chartConfig2"></highchart>
+            </div>
+
+            <div flex>
+            <!-- FILLER -->
+            </div>
+          </div>
+          
+          <br/><br/><br/><br/>
+           <div layout="row">
+            <div align="center" flex="80"><md-divider></md-divider></div>
+            <div flex><!-- FILLER --> </div>
+          </div>         
+
+           <div layout="row">
+            <div align="center" flex="80"><h1 class="md-display-1">Detailed Analysis</h1></div>
+            <div flex><!-- FILLER --> </div>
+          </div>
+
+         <br/>
+          <div layout="row">
+            <div flex="40">
+            
+            <highchart id="chart1" config="chartConfig3"></highchart>
+            </div>
+
+            <div flex="40">
+            
+            <highchart id="chart1" config="chartConfig4"></highchart>
+            </div>
+
+            <div flex>
+            <!-- FILLER -->
+            </div>
+          </div>
+         <br/>
+          <div layout="row">
+            <div flex="40">
+            
+            <highchart id="chart1" config="chartConfig5"></highchart>
+            </div>
+
+            <div flex="40">
+            
+            <highchart id="chart1" config="chartConfig6"></highchart>
+            </div>
+
+            <div flex>
+            <!-- FILLER -->
+            </div>
+          </div>
+        </md-content>
+      </md-tab>
+
+    </md-tabs>
+  </md-content>
+</div>
+
+<br/><br/><br/><br/><br/><br/>
