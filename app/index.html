@@ -49,11 +49,20 @@
     <md-toolbar>
       <div class="md-toolbar-tools">
         <a href="#/home">
-            <img src="img/budget_icon.png" alt="logo" height="42" width="42"></img>
-            Pick Health Plan
+            <!--img src="img/Simpler Decisions-logo.png" alt="logo" height="85" width="280"></img-->
+            <font class="logo_font_l">S</font><font class="logo_font_s">impler </font><font class="logo_font_l">D</font><font class="logo_font_s">ecisions</font>
         </a>
-        <span flex></span>
         
+        <md-button aria-label="???" class="md-pers-hdr" href="#/home">
+          Home
+        </md-button>
+        <md-button aria-label="???" class="md-pers-hdr" href="#/analyze">
+          Decide
+        </md-button>
+        <md-button aria-label="???" class="md-pers-hdr" href="#/guidance">
+          Learn
+        </md-button>
+        <span flex></span>
         <md-button aria-label="Sign-in" class="md-pers-hdr" href="#/login">
           Sign-in
         </md-button>
@@ -62,25 +71,13 @@
     </md-toolbar>
     
     <!--  SECOND TOOLBAR -->
-    <md-toolbar>
+    <!--md-toolbar>
       <div class="md-toolbar-tools">
         <span flex></span>
         
-        <md-button aria-label="???" class="md-pers-hdr" href="#/home">
-          Home
-        </md-button>
-        <md-button aria-label="???" class="md-pers-hdr" href="#/analyze">
-          Analyze
-        </md-button>
-        <md-button aria-label="???" class="md-pers-hdr" href="#/guidance">
-          Guidance
-        </md-button>
-        <!--md-button aria-label="???" class="md-pers-hdr" href="#/extrsc">
-          External Resources
-        </md-button-->
-
+ 
       </div>
-    </md-toolbar>
+    </md-toolbar-->
 
   </md-content>
 </div>
@@ -88,13 +85,17 @@
   <div ng-view></div>
 
    
-  <div>
-    <md-content layout-padding style="padding: 24px;">
-    <a href="#/home">About</a>&nbsp;&nbsp;&nbsp;
-    <a href="#/home">Disclaimer</a>&nbsp;&nbsp;&nbsp;
-    <a href="#/home">Copyright</a> 
-    </md-content>
-  </div>
+ 
+  <md-content>
+    <!--  BOTTOM TOOLBAR -->
+    <md-toolbar>
+      <div class="md-toolbar-tools footer_font">
+          <a href="#/home">About</a>&nbsp;&nbsp;&nbsp;
+          <a href="#/home">Disclaimer</a>&nbsp;&nbsp;&nbsp;
+          <a href="#/home">Copyright</a> 
+      </div>
+    </md-toolbar>
+
 
 </body>
 </html>

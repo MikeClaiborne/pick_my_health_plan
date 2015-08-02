@@ -23,6 +23,21 @@
   width: 100%;
 }
 
-.md-pers-hdr { color: white; ;}
+.md-pers-hdr { color: white;}
 
+.logo_font_l {
+  font-size: 30px;
+  font-family: "Trebuchet MS", Helvetica;
+  color: #ffffff;
+}
+
+.logo_font_s {
+  font-size: 25px;
+  font-family: "Trebuchet MS", Helvetica;
+  color: #ffffff;
+}
+
+.footer_font {
+  font-size: 0.8em;
+}
 
